@@ -79,7 +79,7 @@ Se precisar de ajuda, consulte esta [introdução ao pacote `httr`](https://cran
 
 Nos **conjuntos de dados públicos do BigQuery**, dentro do dataset **google_political_ads**, a tabela **top_keywords_history** tem uma coluna para cada palavra-chave (`keyword_1`, `keyword_2`, `...`) e uma coluna correspondente para o valor gasto, em dólares (`spend_usd_1`, `spend_usd_2`, `...`).
 
-1. Transforme esse conjunto de dados de forma que exista apenas **uma coluna** que concentre as palavras-chave (chamada `keyword`) e apenas uma coluna que concetre o gasto em dólares (chamada `spend_usd`).
+1. Transforme esse conjunto de dados de forma que exista apenas **uma coluna** que concentre as palavras-chave (chamada `keyword`) e apenas uma coluna que concentre o gasto em dólares (chamada `spend_usd`).
 
 **Salve o dataset resultante em um CSV com o nome `resposta-exercicio-2.csv`.** Ele deve ter **2.340 linhas e 6 colunas** e se parecer com a tabela abaixo:
 
