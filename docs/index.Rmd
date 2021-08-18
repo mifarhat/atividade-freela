@@ -1,7 +1,7 @@
 ---
   title: "Atividade - Inteligência de Dados"
   author: "por Jean Prado"
-  date: "17 de agosto de 2021"
+  date: "18 de agosto de 2021"
   output:
     html_document:
     theme: "cosmo"
@@ -34,7 +34,7 @@ Fique tranquilo(a), pois usar esses dados não gera cobrança na sua conta. Bast
 - Anote a conta do Google que você ativou a API. Ela será usada para acessar os dados depois;
 - Acesse a [página inicial do BigQuery](https://console.cloud.google.com/bigquery) (certifique-se que o login foi feito com a mesma conta que você ativou a API — o Google Cloud é ruim em lidar com múltiplas contas);
 - Na barra de busca abaixo de **Explorer**, digite `public` e depois clique em **Ampliar pesquisa para todos os projetos**. Se não funcionar, tente [por esse link](https://console.cloud.google.com/bigquery?project=bigquery-public-data&page=project);
-- Passe o mouse em cima de `bigquery-public-data` e clique no ícone azul escrito **Click to pin**
+- Passe o mouse em cima de `bigquery-public-data` e clique no ícone azul escrito **Click to pin**.
 
 Pronto! Os dados estão em sua conta. Agora, para acessá-los no R, basta usar o pacote [`bigrquery`](https://github.com/r-dbi/bigrquery) — se quiser, pode tomar como base o código abaixo.
 
@@ -48,7 +48,7 @@ con <- DBI::dbConnect(
 )
 ```
 
-Se precisar de ajuda, veja também [como lidar com bancos de dados no R](https://db.rstudio.com/getting-started/database-queries), especialmente [com o pacote bigrquery](https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package).
+Se precisar de ajuda, veja também [como lidar com bancos de dados no R](https://db.rstudio.com/getting-started/database-queries), especialmente [com o pacote `bigrquery`](https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package).
 
 ## Exercício 1
 
