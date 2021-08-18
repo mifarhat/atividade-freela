@@ -20,7 +20,7 @@ Essa atividade tem o objetivo de **mensurar o conhecimento técnico** para as ha
 
 Você deverá entregar essa atividade para o email **dados.br@greenpeace.org** junto com o **código usado nas respostas**, além dos próprios **dados em CSV**, quando a resposta pedir. Se preferir, faça um fork desse repositório e, quando terminar, envie o link do seu repositório com as respostas.
 
-Se você tiver alguma dúvida durante a elaboração da atividade, não hesite em enviar um email para dados.br@greenpeace.org.
+**Se você tiver alguma dúvida durante a elaboração da atividade, não hesite em enviar um email para dados.br@greenpeace.org.**
 
 ## Introdução
 
@@ -48,7 +48,7 @@ con <- DBI::dbConnect(
 )
 ```
 
-Se precisar, veja também [como lidar com bancos de dados no R](https://db.rstudio.com/getting-started/database-queries), especialmente [com o pacote bigrquery](https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package).
+Se precisar de ajuda, veja também [como lidar com bancos de dados no R](https://db.rstudio.com/getting-started/database-queries), especialmente [com o pacote bigrquery](https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package).
 
 ## Exercício 1
 
@@ -73,7 +73,7 @@ readr::read_csv("../data-raw/exercicio-1.csv",
 
 2. A partir do dataset recém-criado, conte o número de deputados por partido e o número de deputados por estado.
 
-Se precisar de ajuda, consulte esta [introdução ao httr](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html) ou a [documentação da API da Câmara](https://dadosabertos.camara.leg.br/swagger/api.html).
+Se precisar de ajuda, consulte esta [introdução ao pacote `httr`](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html) e a [documentação da API da Câmara](https://dadosabertos.camara.leg.br/swagger/api.html).
 
 ## Exercício 2
 
@@ -91,3 +91,19 @@ readr::read_csv("../data-raw/exercicio-2.csv",
 2. A partir do dataset recém-criado, calcule o valor médio por palavra-chave em todo o período e **descreva qual as 3 palavras-chave com maior valor gasto**.
 
 ## Exercício 3
+
+Ainda dentro do dataset **google_political_ads**, a tabela **creative_stats** reune os gastos em anúncios eleitorais de vários países até abril de 2020. Consulte o esquema da tabela dentro do BigQuery para entender a descrição das colunas e, [no DataStudio](https://datastudio.google.com/), crie um dashboard que ajude a dar um panorama dos dados de forma simples e fácil de entender. 
+
+Fique à vontade para usar todos os recursos do DataStudio, como os mais variados tipos de gráfico, campos calculados, paletas de cores customizadas, etc. O dashboard deve mostrar sua visão sobre as principais conclusões às quais esse dataset leva.
+
+Quando terminar, compartilhe o dashboard com o email dados.br@greenpeace.org **com acesso de edição**.
+
+### Para adicionar os dados no DataStudio
+
+Crie um dashboard novo no DataStudio e, na tela de adicionar fontes de dados:
+
+- Clique em BigQuery;
+- Em vez de Projetos recentes, selecione **Conjuntos de dados públicos**;
+- Em "Projeto de faturamento", selecione qualquer projeto disponível, provavelmente "My Project". Fique tranquilo(a) - nenhuma cobrança será gerada;
+- Em "Conjunto de dados público", selecione **google_political_ads**;
+- Em "Tabela", selecione **creative_stats** e clique em **Adicionar**.

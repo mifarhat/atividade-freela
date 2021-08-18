@@ -267,7 +267,7 @@ div.tocify {
 <h2>Bem-vindo(a)!</h2>
 <p>Essa atividade tem o objetivo de <strong>mensurar o conhecimento técnico</strong> para as habilidades desejadas para esse trabalho, como lidar com APIs, conectar e arrumar bases de dados, além de criar visualizações para explicar o que os dados mostram.</p>
 <p>Você deverá entregar essa atividade para o email <strong><a href="mailto:dados.br@greenpeace.org" class="email">dados.br@greenpeace.org</a></strong> junto com o <strong>código usado nas respostas</strong>, além dos próprios <strong>dados em CSV</strong>, quando a resposta pedir. Se preferir, faça um fork desse repositório e, quando terminar, envie o link do seu repositório com as respostas.</p>
-<p>Se você tiver alguma dúvida durante a elaboração da atividade, não hesite em enviar um email para <a href="mailto:dados.br@greenpeace.org" class="email">dados.br@greenpeace.org</a>.</p>
+<p><strong>Se você tiver alguma dúvida durante a elaboração da atividade, não hesite em enviar um email para <a href="mailto:dados.br@greenpeace.org" class="email">dados.br@greenpeace.org</a>.</strong></p>
 </div>
 <div id="introdução" class="section level2">
 <h2>Introdução</h2>
@@ -289,7 +289,7 @@ con &lt;- DBI::dbConnect(
   project = &quot;bigquery-public-data&quot;,
   dataset = &quot;dataset_escolhido_aqui&quot;
 )</code></pre>
-<p>Se precisar, veja também <a href="https://db.rstudio.com/getting-started/database-queries">como lidar com bancos de dados no R</a>, especialmente <a href="https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package">com o pacote bigrquery</a>.</p>
+<p>Se precisar de ajuda, veja também <a href="https://db.rstudio.com/getting-started/database-queries">como lidar com bancos de dados no R</a>, especialmente <a href="https://db.rstudio.com/databases/big-query/#using-the-bigrquery-package">com o pacote bigrquery</a>.</p>
 </div>
 <div id="exercício-1" class="section level2">
 <h2>Exercício 1</h2>
@@ -302,12 +302,12 @@ con &lt;- DBI::dbConnect(
 <li>Transforme o resultado dessa requisição em um <em>tibble</em> de <strong>9 colunas e 512 linhas</strong> com as informações básicas sobre os deputados.</li>
 </ul>
 <p><strong>Salve o dataset resultante em um CSV com o nome <code>resposta-exercicio-1.csv</code>.</strong> O dataset resultante deve se parecer com a tabela abaixo:</p>
-<div id="htmlwidget-00ee619a48f7dfe9ac40" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-00ee619a48f7dfe9ac40">{"x":{"filter":"none","extensions":["FixedColumns"],"data":[["1","2","3","4","5","6","7","8","9","10"],[204554,204521,204379,204560,204528,121948,74646,141372,160508,136811],["Abílio Santana","Abou Anni","Acácio Favacho","Adolfo Viana","Adriana Ventura","Adriano do Baldy","Aécio Neves","Aelton Freitas","Afonso Florence","Afonso Hamm"],["PL","PSL","PROS","PSDB","NOVO","PP","PSDB","PL","PT","PP"],["https://dadosabertos.camara.leg.br/api/v2/partidos/37906","https://dadosabertos.camara.leg.br/api/v2/partidos/36837","https://dadosabertos.camara.leg.br/api/v2/partidos/36763","https://dadosabertos.camara.leg.br/api/v2/partidos/36835","https://dadosabertos.camara.leg.br/api/v2/partidos/37901","https://dadosabertos.camara.leg.br/api/v2/partidos/37903","https://dadosabertos.camara.leg.br/api/v2/partidos/36835","https://dadosabertos.camara.leg.br/api/v2/partidos/37906","https://dadosabertos.camara.leg.br/api/v2/partidos/36844","https://dadosabertos.camara.leg.br/api/v2/partidos/37903"],["BA","SP","AP","BA","SP","GO","MG","MG","BA","RS"],[56,56,56,56,56,56,56,56,56,56],["https://www.camara.leg.br/internet/deputado/bandep/204554.jpg","https://www.camara.leg.br/internet/deputado/bandep/204521.jpg","https://www.camara.leg.br/internet/deputado/bandep/204379.jpg","https://www.camara.leg.br/internet/deputado/bandep/204560.jpg","https://www.camara.leg.br/internet/deputado/bandep/204528.jpg","https://www.camara.leg.br/internet/deputado/bandep/121948.jpg","https://www.camara.leg.br/internet/deputado/bandep/74646.jpg","https://www.camara.leg.br/internet/deputado/bandep/141372.jpg","https://www.camara.leg.br/internet/deputado/bandep/160508.jpg","https://www.camara.leg.br/internet/deputado/bandep/136811.jpg"],["dep.abiliosantana@camara.leg.br","dep.abouanni@camara.leg.br","dep.acaciofavacho@camara.leg.br","dep.adolfoviana@camara.leg.br","dep.adrianaventura@camara.leg.br","dep.adrianodobaldy@camara.leg.br","dep.aecioneves@camara.leg.br","dep.aeltonfreitas@camara.leg.br","dep.afonsoflorence@camara.leg.br","dep.afonsohamm@camara.leg.br"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>nome<\/th>\n      <th>siglaPartido<\/th>\n      <th>uriPartido<\/th>\n      <th>siglaUf<\/th>\n      <th>idLegislatura<\/th>\n      <th>urlFoto<\/th>\n      <th>email<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollX":true,"scrollCollapse":true,"columnDefs":[{"className":"dt-right","targets":[1,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-90b089549fbe36ff0f40" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-90b089549fbe36ff0f40">{"x":{"filter":"none","extensions":["FixedColumns"],"data":[["1","2","3","4","5","6","7","8","9","10"],[204554,204521,204379,204560,204528,121948,74646,141372,160508,136811],["Abílio Santana","Abou Anni","Acácio Favacho","Adolfo Viana","Adriana Ventura","Adriano do Baldy","Aécio Neves","Aelton Freitas","Afonso Florence","Afonso Hamm"],["PL","PSL","PROS","PSDB","NOVO","PP","PSDB","PL","PT","PP"],["https://dadosabertos.camara.leg.br/api/v2/partidos/37906","https://dadosabertos.camara.leg.br/api/v2/partidos/36837","https://dadosabertos.camara.leg.br/api/v2/partidos/36763","https://dadosabertos.camara.leg.br/api/v2/partidos/36835","https://dadosabertos.camara.leg.br/api/v2/partidos/37901","https://dadosabertos.camara.leg.br/api/v2/partidos/37903","https://dadosabertos.camara.leg.br/api/v2/partidos/36835","https://dadosabertos.camara.leg.br/api/v2/partidos/37906","https://dadosabertos.camara.leg.br/api/v2/partidos/36844","https://dadosabertos.camara.leg.br/api/v2/partidos/37903"],["BA","SP","AP","BA","SP","GO","MG","MG","BA","RS"],[56,56,56,56,56,56,56,56,56,56],["https://www.camara.leg.br/internet/deputado/bandep/204554.jpg","https://www.camara.leg.br/internet/deputado/bandep/204521.jpg","https://www.camara.leg.br/internet/deputado/bandep/204379.jpg","https://www.camara.leg.br/internet/deputado/bandep/204560.jpg","https://www.camara.leg.br/internet/deputado/bandep/204528.jpg","https://www.camara.leg.br/internet/deputado/bandep/121948.jpg","https://www.camara.leg.br/internet/deputado/bandep/74646.jpg","https://www.camara.leg.br/internet/deputado/bandep/141372.jpg","https://www.camara.leg.br/internet/deputado/bandep/160508.jpg","https://www.camara.leg.br/internet/deputado/bandep/136811.jpg"],["dep.abiliosantana@camara.leg.br","dep.abouanni@camara.leg.br","dep.acaciofavacho@camara.leg.br","dep.adolfoviana@camara.leg.br","dep.adrianaventura@camara.leg.br","dep.adrianodobaldy@camara.leg.br","dep.aecioneves@camara.leg.br","dep.aeltonfreitas@camara.leg.br","dep.afonsoflorence@camara.leg.br","dep.afonsohamm@camara.leg.br"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>nome<\/th>\n      <th>siglaPartido<\/th>\n      <th>uriPartido<\/th>\n      <th>siglaUf<\/th>\n      <th>idLegislatura<\/th>\n      <th>urlFoto<\/th>\n      <th>email<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","scrollX":true,"scrollCollapse":true,"columnDefs":[{"className":"dt-right","targets":[1,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ol start="2" style="list-style-type: decimal">
 <li>A partir do dataset recém-criado, conte o número de deputados por partido e o número de deputados por estado.</li>
 </ol>
-<p>Se precisar de ajuda, consulte esta <a href="https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html">introdução ao httr</a> ou a <a href="https://dadosabertos.camara.leg.br/swagger/api.html">documentação da API da Câmara</a>.</p>
+<p>Se precisar de ajuda, consulte esta <a href="https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html">introdução ao pacote <code>httr</code></a> e a <a href="https://dadosabertos.camara.leg.br/swagger/api.html">documentação da API da Câmara</a>.</p>
 </div>
 <div id="exercício-2" class="section level2">
 <h2>Exercício 2</h2>
@@ -416,6 +416,20 @@ con &lt;- DBI::dbConnect(
 </div>
 <div id="exercício-3" class="section level2">
 <h2>Exercício 3</h2>
+<p>Ainda dentro do dataset <strong>google_political_ads</strong>, a tabela <strong>creative_stats</strong> reune os gastos em anúncios eleitorais de vários países até abril de 2020. Consulte o esquema da tabela dentro do BigQuery para entender a descrição das colunas e, <a href="https://datastudio.google.com/">no DataStudio</a>, crie um dashboard que ajude a dar um panorama dos dados de forma simples e fácil de entender.</p>
+<p>Fique à vontade para usar todos os recursos do DataStudio, como os mais variados tipos de gráfico, campos calculados, paletas de cores customizadas, etc. O dashboard deve mostrar sua visão sobre as principais conclusões às quais esse dataset leva.</p>
+<p>Quando terminar, compartilhe o dashboard com o email <a href="mailto:dados.br@greenpeace.org" class="email">dados.br@greenpeace.org</a> <strong>com acesso de edição</strong>.</p>
+<div id="para-adicionar-os-dados-no-datastudio" class="section level3">
+<h3>Para adicionar os dados no DataStudio</h3>
+<p>Crie um dashboard novo no DataStudio e, na tela de adicionar fontes de dados:</p>
+<ul>
+<li>Clique em BigQuery;</li>
+<li>Em vez de Projetos recentes, selecione <strong>Conjuntos de dados públicos</strong>;</li>
+<li>Em “Projeto de faturamento”, selecione qualquer projeto disponível, provavelmente “My Project”. Fique tranquilo(a) - nenhuma cobrança será gerada;</li>
+<li>Em “Conjunto de dados público”, selecione <strong>google_political_ads</strong>;</li>
+<li>Em “Tabela”, selecione <strong>creative_stats</strong> e clique em <strong>Adicionar</strong>.</li>
+</ul>
+</div>
 </div>
 
 
