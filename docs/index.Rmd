@@ -18,7 +18,7 @@
 
 Essa atividade tem o objetivo de **mensurar o conhecimento técnico** para as habilidades desejadas para esse trabalho, como lidar com APIs, conectar e arrumar bases de dados, além de criar visualizações para explicar o que os dados mostram.
 
-Você deverá entregar essa atividade para o email **dados.br@greenpeace.org** junto com o **código usado nas respostas**, além dos próprios **dados em CSV**, quando a resposta pedir. Se preferir, faça um fork desse repositório e, quando terminar, envie o link do seu repositório com as respostas.
+Você deverá entregar essa atividade para o email **dados.br@greenpeace.org** junto com o **código usado nas respostas** (em .R ou .Rmd), além dos próprios **dados em CSV**, quando a resposta pedir. Se preferir, faça um fork desse repositório e, quando terminar, envie o link do seu repositório com código reprodutível, além dos CSVs com as respostas.
 
 **Se você tiver alguma dúvida durante a elaboração da atividade, não hesite em enviar um email para dados.br@greenpeace.org.**
 
