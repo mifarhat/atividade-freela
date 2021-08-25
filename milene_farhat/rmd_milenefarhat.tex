@@ -1,0 +1,200 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Atividade - Inteligência de Dados},
+            pdfauthor={Milene V. Farhat},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Atividade - Inteligência de Dados}
+\author{Milene V. Farhat}
+\date{22/08/2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{exercuxedcio-1}{%
+\subsubsection{Exercício 1}\label{exercuxedcio-1}}
+
+\textbf{1.1} Acesse o endpoint \texttt{deputados} e: \emph{Faça uma
+requisição para obter a lista de deputados na atual legislatura em ordem
+alfabética. }Transforme o resultado dessa requisição em um \emph{tibble}
+de 9 colunas e 512 linhas com as informações básicas sobre os deputados.
+\emph{Salve o dataset resultante em um CSV com o nome
+}resposta-exercicio-1.csv*.
+
+\begin{verbatim}
+## # A tibble: 6 x 9
+##       id uri   nome  siglaPartido uriPartido siglaUf idLegislatura urlFoto email
+##    <int> <chr> <chr> <chr>        <chr>      <chr>           <int> <chr>   <chr>
+## 1 204554 http~ Abíl~ PL           https://d~ BA                 56 https:~ dep.~
+## 2 204521 http~ Abou~ PSL          https://d~ SP                 56 https:~ dep.~
+## 3 204379 http~ Acác~ PROS         https://d~ AP                 56 https:~ dep.~
+## 4 204560 http~ Adol~ PSDB         https://d~ BA                 56 https:~ dep.~
+## 5 204528 http~ Adri~ NOVO         https://d~ SP                 56 https:~ dep.~
+## 6 121948 http~ Adri~ PP           https://d~ GO                 56 https:~ dep.~
+\end{verbatim}
+
+\textbf{1.2} A partir do dataset recém-criado, conte o número de
+deputados por partido e o número de deputados por estado.
+
+\hypertarget{nuxfamero-de-deputados-por-estado}{%
+\section{``Número de deputados por
+estado''}\label{nuxfamero-de-deputados-por-estado}}
+
+\begin{verbatim}
+## # A tibble: 27 x 2
+##    estado nr_deputados
+##    <chr>         <int>
+##  1 AC                8
+##  2 AL                9
+##  3 AM                8
+##  4 AP                8
+##  5 BA               39
+##  6 CE               22
+##  7 DF                8
+##  8 ES               10
+##  9 GO               17
+## 10 MA               18
+## # ... with 17 more rows
+\end{verbatim}
+
+\begin{longtable}[]{@{}lr@{}}
+\caption{Número de deputados por partido}\tabularnewline
+\toprule
+partido & nr\_deputados\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+partido & nr\_deputados\tabularnewline
+\midrule
+\endhead
+AVANTE & 8\tabularnewline
+CIDADANIA & 7\tabularnewline
+DEM & 27\tabularnewline
+MDB & 34\tabularnewline
+NOVO & 8\tabularnewline
+PATRIOTA & 6\tabularnewline
+PCdoB & 8\tabularnewline
+PDT & 25\tabularnewline
+PL & 41\tabularnewline
+PODE & 10\tabularnewline
+PP & 41\tabularnewline
+PROS & 11\tabularnewline
+PSB & 31\tabularnewline
+PSC & 11\tabularnewline
+PSD & 34\tabularnewline
+PSDB & 33\tabularnewline
+PSL & 53\tabularnewline
+PSOL & 9\tabularnewline
+PT & 53\tabularnewline
+PTB & 10\tabularnewline
+PV & 4\tabularnewline
+REDE & 1\tabularnewline
+REPUBLICANOS & 32\tabularnewline
+S.PART. & 1\tabularnewline
+SOLIDARIEDADE & 14\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{exercuxedcio-2}{%
+\subsubsection{Exercício 2}\label{exercuxedcio-2}}
+
+\textbf{2.1} Transforme esse conjunto de dados de forma que exista
+apenas uma coluna que concentre as palavras-chave (chamada
+\texttt{keyword}) e apenas uma coluna que concentre o gasto em dólares
+(chamada \texttt{spend\_usd}). Salve o dataset resultante em um CSV com
+o nome \emph{resposta-exercicio-2.csv}.
+
+\begin{verbatim}
+##    election_cycle report_date region  elections          keyword spend_usd
+## 1 US-Federal-2018  2019-12-02     US US-Federal elizabeth warren   1491100
+## 2 US-Federal-2018  2019-11-25     US US-Federal elizabeth warren   1479900
+## 3 US-Federal-2018  2019-11-20     US US-Federal elizabeth warren   1469600
+## 4 US-Federal-2018  2019-11-18     US US-Federal elizabeth warren   1466600
+## 5 US-Federal-2018  2019-11-11     US US-Federal elizabeth warren   1452300
+## 6 US-Federal-2018  2019-11-04     US US-Federal elizabeth warren   1430200
+\end{verbatim}
+
+\textbf{2.2} A partir do dataset recém-criado, calcule o valor médio por
+palavra-chave em todo o período e descreva qual as 3 palavras-chave com
+maior valor gasto.
+
+As 3 palavras-chave com maior valor gasto são: \textbf{donald trump},
+\textbf{tulsi gabbard}, \textbf{kamala harris}, com valor médio gasto de
+\textbf{US\$ 914.755,00}, \textbf{US\$ 816.430,56} e \textbf{US\$
+712.754,49}, respectivamente.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+keyword & avg\_spend\_usd\tabularnewline
+\midrule
+\endhead
+donald trump & US\$ 914.755,00\tabularnewline
+tulsi gabbard & US\$ 816.430,56\tabularnewline
+kamala harris & US\$ 712.754,49\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}

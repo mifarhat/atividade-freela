@@ -1,0 +1,104 @@
+---
+title: "Atividade - Inteligência de Dados"
+author: "Milene V. Farhat"
+date: "22/08/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+<style> body {text-align: justify} </style>
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# install.packages('bigrquery')
+#tinytex::install_tinytex()
+
+library(tidyverse)
+library(dbplyr)
+library(bigrquery)
+library(magrittr)
+library(httr)
+library(jsonlite)
+```
+
+### Exercício 1
+
+**1.1** Acesse o endpoint `deputados` e:
+
+* Faça uma requisição para obter a lista de deputados na atual legislatura em ordem alfabética.
+* Transforme o resultado dessa requisição em um *tibble* de 9 colunas e 512 linhas com as informações básicas sobre os deputados.
+* Salve o dataset resultante em um CSV com o nome *resposta-exercicio-1.csv*.
+
+```{r, echo=FALSE, warning=FALSE}
+deputados <- "https://dadosabertos.camara.leg.br/api/v2/deputados" %>% 
+  httr::GET()
+
+txt_deputados <- content(deputados, "text")
+json_deputados <- fromJSON(txt_deputados, flatten = TRUE)
+df_deputados <- tibble::as.tibble(json_deputados$dados)
+
+# summary(df_deputados)
+df_deputados
+
+# write.csv(df_deputados,"resposta-exercicio-1.csv", row.names = FALSE)
+```
+
+**1.2** A partir do dataset recém-criado, conte o número de deputados por partido e o número de deputados por estado.
+
+#### Número de deputados por estado
+
+```{r, echo=FALSE, warning=FALSE}
+# names(df_deputados)
+# df_deputados %>% count(nome) %>% filter(n > 1)
+
+df_deputados %>% 
+  count(siglaUf) %>% 
+  rename('estado' = siglaUf, 'nr_deputados'= n)
+```
+
+#### Número de deputados por partido
+
+```{r, echo=FALSE, warning=FALSE}
+df_deputados %>% 
+  count(siglaPartido) %>% 
+  rename('partido' = siglaPartido, 'nr_deputados'= n)
+```
+
+### Exercício 2
+
+**2.1** Transforme esse conjunto de dados de forma que exista apenas uma coluna que concentre as palavras-chave (chamada `keyword`) e apenas uma coluna que concentre o gasto em dólares (chamada `spend_usd`). Salve o dataset resultante em um CSV com o nome *resposta-exercicio-2.csv*.
+
+```{r, echo=FALSE, warning=FALSE}
+bigrquery::bq_auth("milene.farhat@gmail.com")
+
+con <- DBI::dbConnect(
+  bigrquery::bigquery(),
+  project = "bigquery-public-data",
+  dataset = "google_political_ads")
+
+#dbListTables(con)
+
+pol_ads_key <- tbl(con, "top_keywords_history") %>%
+  as.data.frame()
+
+pol_ads_key %<>% 
+  gather("key1", keyword, starts_with("keyword")) %>% 
+  gather("key2", spend_usd, starts_with("spend_usd")) %>% 
+  select(-key1, -key2) 
+
+pol_ads_key
+# write.csv(pol_ads_key,"resposta-exercicio-2.csv", row.names = FALSE)
+```
+
+**2.2** A partir do dataset recém-criado, calcule o valor médio por palavra-chave em todo o período e descreva qual as 3 palavras-chave com maior valor gasto.
+
+As 3 palavras-chave com maior valor gasto são: **donald trump**, **tulsi gabbard**, **kamala harris**, com valor médio gasto de **US$ 914.755,00**, **US$ 816.430,56** e **US$ 712.754,49**, respectivamente.
+
+```{r, echo=FALSE, warning=FALSE}
+pol_ads_key %>% 
+  group_by(keyword) %>% 
+  summarise(avg_spend_usd = mean(spend_usd)) %>% 
+  arrange(desc(avg_spend_usd)) %>% 
+  head(3) %>% 
+  mutate(avg_spend_usd = paste('US$',formatC(avg_spend_usd,format="f",big.mark=".", decimal.mark = ',',digits=2)))
+```
